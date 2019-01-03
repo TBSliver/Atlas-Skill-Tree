@@ -1,0 +1,7 @@
+[
+  { "id" : "survivalism",           "parent" : [],                  "text" : "Survivalism" },
+  { "id" : "the_basics",            "parent" : [ "survivalism" ],   "text" : "The Basics" },
+  { "id" : "tools_of_the_trade",    "parent" : [ "survivalism" ],   "text" : "Tools of the Trade" },
+  { "id" : "construction_unlock",   "parent" : [ "the_basics" ],    "text" : "Construction Unlock" },
+  { "id" : "water_keeper",          "parent" : [ "the_basics" ],    "text" : "Water Keeper" }
+]

@@ -1,37 +1,25 @@
-## Welcome to GitHub Pages
+## Skill Tree
 
-You can use the [editor on GitHub](https://github.com/TBSliver/Atlas-Skill-Tree/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+<style>
+circle {
+  fill: cadetblue;
+}
+line {
+  stroke: #aaa;
+  stroke-width: 1px;
+}
+text {
+  text-anchor: middle;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  fill: #666;
+  font-size: 16px;
+}
+</style>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<svg id="skill_tree" width="900" height="600">
+  <g class="links"></g>
+  <g class="nodes"></g>
+</svg>
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/TBSliver/Atlas-Skill-Tree/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="js/skill_tree.js"></script>
