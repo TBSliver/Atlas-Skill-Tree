@@ -5,7 +5,6 @@ circle {
   fill: cadetblue;
 }
 text {
-  text-anchor: middle;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   fill: #666;
   font-size: 16px;

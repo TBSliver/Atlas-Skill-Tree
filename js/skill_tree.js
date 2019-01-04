@@ -44,6 +44,7 @@ function draw_graph() {
     .force('center', d3.forceCenter(svg.attr("width") / 2, svg.attr("height") / 2))
     .force('link', d3.forceLink().links(links))
     .on('tick', ticked);
+  drawNodes();
 }
 
 function updateLinks() {
@@ -66,18 +67,31 @@ function updateLinks() {
   u.exit().remove();
 }
 
-function updateNodes() {
-  u = d3.select('.nodes')
-    .selectAll('text')
-    .data(nodes)
+function drawNodes() {
+  var u = d3.select('.nodes')
+    .selectAll('g.skills')
+    .data(nodes);
 
-  u.enter().append('text').merge(u)
+  var node = u.enter().append('g')
+
+  node.attr("class", "skills")
+
+  node.append('circle')
+    .attr('r', 5)
+
+  node.append('text')
     .text(function(d) { return d.text })
-    .attr('x', function(d) { return d.x })
-    .attr('y', function(d) { return d.y })
-    .attr('dy', function(d) { return 5 })
+    .attr('x', 10)
+    .attr('text-anchor', 'start')
+    .attr('alignmend-baseline', 'middle');
 
-  u.exit().remove()
+  u.exit().remove();
+}
+
+function updateNodes() {
+  d3.select('.nodes')
+    .selectAll('g.skills')
+    .attr('transform', function(d) { return "translate("+d.x+","+d.y+")" })
 }
 
 function ticked() {
