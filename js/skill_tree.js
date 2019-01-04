@@ -47,27 +47,23 @@ function draw_graph() {
 }
 
 function updateLinks() {
+  // Select all current link lines, and merge with the data
   var u = d3.select('.links')
     .selectAll('line')
-    .data(links)
+    .data(links);
 
-  u.enter()
-    .append('line')
-    .merge(u)
-    .attr('x1', function(d) {
-      return d.source.x
-    })
-    .attr('y1', function(d) {
-      return d.source.y
-    })
-    .attr('x2', function(d) {
-      return d.target.x
-    })
-    .attr('y2', function(d) {
-      return d.target.y
-    })
+  // Create any extras that are needed due to links updating
+  u.enter().append('line').merge(u)
+  // Then style them
+    .attr('x1', function(d) { return d.source.x })
+    .attr('y1', function(d) { return d.source.y })
+    .attr('x2', function(d) { return d.target.x })
+    .attr('y2', function(d) { return d.target.y })
+    .attr("stroke-width", 1)
+    .attr("stroke", "black");
 
-  u.exit().remove()
+  // Then remove any that arent actually needed anymore
+  u.exit().remove();
 }
 
 function updateNodes() {
@@ -75,21 +71,11 @@ function updateNodes() {
     .selectAll('text')
     .data(nodes)
 
-  u.enter()
-    .append('text')
-    .text(function(d) {
-      return d.text
-    })
-    .merge(u)
-    .attr('x', function(d) {
-      return d.x
-    })
-    .attr('y', function(d) {
-      return d.y
-    })
-    .attr('dy', function(d) {
-      return 5
-    })
+  u.enter().append('text').merge(u)
+    .text(function(d) { return d.text })
+    .attr('x', function(d) { return d.x })
+    .attr('y', function(d) { return d.y })
+    .attr('dy', function(d) { return 5 })
 
   u.exit().remove()
 }

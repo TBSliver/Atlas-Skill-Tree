@@ -4,10 +4,6 @@
 circle {
   fill: cadetblue;
 }
-line {
-  stroke: #aaa;
-  stroke-width: 1px;
-}
 text {
   text-anchor: middle;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
